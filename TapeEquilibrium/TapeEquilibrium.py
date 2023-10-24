@@ -3,12 +3,14 @@
 
 def solution(A):
     # Implement your solution here
-    minimumDifference = remainingSum = sum(A)
+    minimumDifference = float('inf')
+    remainingSum = sum(A)
     rollingSum = 0
 
     for num in A:
         rollingSum += num
         remainingSum -= num
-        minimumDifference = min(minimumDifference, abs(remainingSum - rollingSum))
+        difference = abs(rollingSum - remainingSum)
+        minimumDifference = min(minimumDifference, difference)
 
     return minimumDifference
