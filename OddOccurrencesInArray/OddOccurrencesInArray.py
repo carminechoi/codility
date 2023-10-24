@@ -3,13 +3,9 @@
 
 def solution(A):
     # Implement your solution here
-    counts = {}
-    for num in A:
-        counts[num] = counts.get(num, 0) + 1
-    
-    for key, value in counts.items():
-        if value == 1:
-            return key
+    result = 0
 
-    # time: O(2n) -> O(n)
-    # space: O(n)
+    for num in A:
+        result = result ^ num
+        
+    return result
