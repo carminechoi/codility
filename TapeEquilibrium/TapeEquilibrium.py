@@ -7,7 +7,7 @@ def solution(A):
     remainingSum = sum(A)
     rollingSum = 0
 
-    for num in A:
+    for num in A[:-1]:
         rollingSum += num
         remainingSum -= num
         difference = abs(rollingSum - remainingSum)
