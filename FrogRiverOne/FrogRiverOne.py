@@ -3,10 +3,9 @@
 
 def solution(X, A):
     # Implement your solution here
-    length = len(A)
-
-    for i in range(length):
+    
+    for i in range(len(A)):
         if A[i] >= X:
             return i
 
-    return length
+    return -1
