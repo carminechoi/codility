@@ -3,9 +3,12 @@
 
 def solution(X, A):
     # Implement your solution here
+    positions = set()
     
-    for i in range(len(A)):
-        if A[i] >= X:
-            return i
+    for time, leaf_position in enumerate(A):
+        positions.add(leaf_position)
+        
+        if len(positions) == X:
+            return time
 
     return -1
