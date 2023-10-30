@@ -3,13 +3,16 @@
 
 def solution(A):
     # Implement your solution here
-    westCount = 0
+    eastCount = 0
     pairs = 0
 
-    for car in A[::-1]:
+    for car in A:
         if car == 0:
-           pairs += westCount
+           eastCount += 1
         else:
-            westCount += 1
+            pairs += eastCount
+            
+            if pairs > 1000000000:
+                return -1
 
     return pairs
