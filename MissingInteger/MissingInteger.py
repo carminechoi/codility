@@ -3,16 +3,14 @@
 
 def solution(A):
     # Implement your solution here
-    sortedElements = sorted(A)
-    
-    previous = 0
-    for element in sortedElements:
-        if element > 0:
-            if element == previous:
-                continue
-            elif element == previous + 1:
-                previous += 1
-            else:
-                return previous + 1
-    
-    return previous + 1 if previous >= 1 else 1
+    N = len(A)
+
+    positive_set = set()
+
+    for num in A:
+        if num > 0:
+            positive_set.add(num)
+
+    for i in range(1, N + 2):
+        if i not in positive_set:
+            return i
