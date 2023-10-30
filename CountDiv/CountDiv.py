@@ -3,10 +3,6 @@
 
 def solution(A, B, K):
     # Implement your solution here
-    divisibleCount = 0
-
-    for i in range(A, B+1):
-        if i % K == 0:
-            divisibleCount += 1
+    count = B // K - (A - 1) // K
     
-    return divisibleCount
+    return count
